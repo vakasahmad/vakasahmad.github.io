@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Satellite Data Assimilation for Wheat Yield Estimation — project by Waqas Ahmad.">
+<title>Satellite Data Assimilation for Wheat Yield Estimation | Waqas Ahmad</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="../index.html">WAQAS AHMAD</a>
+    <button class="menu-btn" aria-label="Toggle navigation">☰</button>
+    <nav class="nav">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#outputs">Outputs</a>
+      <a href="../assets/Waqas_Ahmad_CV.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="project-page-hero">
+  <div class="container project-hero-grid">
+    <div class="project-hero-media">
+      <img src="../assets/images/home-thesis-16x10.jpg" alt="Wheat research figure showing satellite-derived LAI, evapotranspiration, phenology and CropSyst yield-model outputs" data-fallback>
+      <span class="fallback-copy"></span>
+    </div>
+    <div>
+      <div class="label">MSc Research · University of Agriculture Faisalabad · 2025</div>
+      <h1>Satellite Data Assimilation for Wheat Yield Estimation</h1>
+      <p class="project-one-liner">Integrating satellite-derived crop state and water-use observations with a process-based crop model for wheat biomass and yield estimation.</p>
+      <div class="project-meta"><div class="meta-item"><b>Affiliation</b><span>MSc Research · UAF</span></div><div class="meta-item"><b>Model</b><span>CropSyst</span></div><div class="meta-item"><b>EO inputs</b><span>Landsat · EEFlux</span></div><div class="meta-item"><b>Status</b><span>Manuscript in preparation</span></div></div>
+      <a class="back" href="../index.html#projects">← Back to Projects</a>
+    </div>
+  </div>
+</section>
+<div class="project-body">
+  <div class="container content-width">
+    
+<section class="content-section">
+  <h2>Project Overview</h2>
+  <p>
+    Crop-yield estimation is difficult in regions where field observations are sparse and model inputs are incomplete.
+    My MSc research investigated how remotely sensed observations of crop canopy development and water use could be
+    incorporated into a process-based crop model to support wheat biomass and yield estimation under data-limited conditions.
+  </p>
+  <p>
+    Landsat NDVI time series were used to characterize crop development and estimate leaf area index (LAI).
+    EEFlux evapotranspiration fraction (ETrF) was combined with daily reference evapotranspiration derived from weather data
+    to estimate actual evapotranspiration (ETa). These satellite-derived state and flux variables were then used to constrain
+    CropSyst simulations rather than relying only on unconstrained model trajectories.
+  </p>
+  <p>
+    Satellite NDVI was also used to estimate seasonal phenology such as start, peak and end of season dates, using a
+    threshold-based method from published literature. The broader objective was to assess whether automated Earth-observation
+    products could make process-based crop modeling more useful in environments where detailed field measurements are limited.
+  </p>
+</section>
+
+<section class="content-section">
+  <h2>Approach</h2>
+  <div class="workflow">
+    <div class="workflow-step"><div class="step-num">01</div><b>Landsat &amp; EEFlux</b><span>Vegetation dynamics and satellite ET products</span></div>
+    <div class="workflow-step"><div class="step-num">02</div><b>NDVI → LAI</b><span>Empirical canopy-state estimation</span></div>
+    <div class="workflow-step"><div class="step-num">03</div><b>ETrF → ETa</b><span>EEFlux ETrF × daily reference ET</span></div>
+    <div class="workflow-step"><div class="step-num">04</div><b>Phenology</b><span>SOS · POS · EOS from NDVI time series</span></div>
+    <div class="workflow-step"><div class="step-num">05</div><b>CropSyst</b><span>Biomass and wheat yield simulation</span></div>
+  </div>
+  <div class="figure">
+    <img src="../assets/images/thesis-workflow.jpg"
+         alt="Research workflow showing Landsat NDVI, LAI, EEFlux evapotranspiration, phenology and CropSyst wheat yield simulation"
+         data-fallback>
+    <span class="fallback-copy"></span>
+    <div class="caption">Study area map. (a) Map of Pakistan, (b) Adaptive Research Farms (ARF) located in rainfed region and (c) Punjab Seed Corporation (PSC) farms located in irrigated region of Punjab, Pakistan.</div>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2>Selected Outputs</h2>
+  <div class="figure-grid">
+    <div class="figure">
+      <img src="../assets/images/thesis-et-phenology.jpg"
+           alt="Time-series figure comparing reference evapotranspiration, satellite-derived actual evapotranspiration and wheat phenology"
+           data-fallback>
+      <span class="fallback-copy"></span>
+      <div class="caption">ET and phenology across growing seasons.</div>
+    </div>
+    <div class="figure">
+      <img src="../assets/images/thesis-yield-results.jpg"
+           alt="Observed versus simulated wheat biomass or yield results from the CropSyst satellite-data assimilation study"
+           data-fallback>
+      <span class="fallback-copy"></span>
+      <div class="caption">observed vs. modeled wheat grain yield at (a) Rainfed Site and (b) Irrigated Site.</div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2>Scope &amp; Status</h2>
+  <p>
+    This work was completed as my MSc (Hons) Agricultural Engineering research at the University of Agriculture Faisalabad.
+    I am currently preparing a manuscript based on the study.
+  </p>
+  <div class="note">
+    <strong>Working manuscript title:</strong> <em>Assessing the applicability of METRIC-CropSyst and automated satellite evapotranspiration products for wheat yield estimation in data-scarce environments.</em>
+  </div>
+  <div class="data-tools">
+    <span>CropSyst</span><span>EEFlux / METRIC</span><span>Landsat</span><span>R</span><span>Google Earth Engine</span><span>LAI</span><span>ETa</span><span>Phenology</span>
+  </div>
+</section>
+
+  </div>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <span>© 2026 Waqas Ahmad</span>
+    <span>Agricultural Engineering · Crop Modeling · Earth Observation</span>
+  </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

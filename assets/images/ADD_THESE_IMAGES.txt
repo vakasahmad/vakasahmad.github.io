@@ -1,0 +1,11 @@
+THESIS
+thesis-hero.jpg
+thesis-workflow.jpg
+thesis-et-phenology.jpg
+thesis-yield-results.jpg
+
+FIELD / UAV
+field-uav-operation.jpg
+field-multispectral.jpg
+field-sensors.jpg
+field-training.jpg

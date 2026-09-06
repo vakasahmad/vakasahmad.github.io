@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Multi-Sensor Flood Mapping and Land-Cover Exposure Assessment — project by Waqas Ahmad.">
+<title>Multi-Sensor Flood Mapping and Land-Cover Exposure Assessment | Waqas Ahmad</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="../index.html">WAQAS AHMAD</a>
+    <button class="menu-btn" aria-label="Toggle navigation">☰</button>
+    <nav class="nav">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#outputs">Outputs</a>
+      <a href="../assets/Waqas_Ahmad_CV.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="project-page-hero">
+  <div class="container project-hero-grid">
+    <div class="project-hero-media">
+      <img src="../assets/images/flood-sentinel1.jpg" alt="Sentinel-1 flood extent mapping output for D.G. Khan during the 2022 Pakistan floods" data-fallback>
+      <span class="fallback-copy"></span>
+    </div>
+    <div>
+      <div class="label">Conference Project · UAF · 2024</div>
+      <h1>Multi-Sensor Flood Mapping and Land-Cover Exposure Assessment</h1>
+      <p class="project-one-liner">Combining Sentinel-1 SAR and Sentinel-2 optical observations to characterize inundation and exposed agricultural / built-up land during the 2022 D.G. Khan flood event.</p>
+      <div class="project-meta"><div class="meta-item"><b>Event</b><span>2022 Pakistan floods</span></div><div class="meta-item"><b>Study area</b><span>Dera Ghazi Khan</span></div><div class="meta-item"><b>Data</b><span>Sentinel-1 · Sentinel-2</span></div><div class="meta-item"><b>Platform</b><span>Google Earth Engine</span></div></div>
+      <a class="back" href="../index.html#projects">← Back to Projects</a>
+    </div>
+  </div>
+</section>
+<div class="project-body">
+  <div class="container content-width">
+    
+<section class="content-section">
+  <h2>Project Overview</h2>
+  <p>
+    This conference project used multi-temporal Sentinel-1 SAR and Sentinel-2 optical imagery in Google Earth Engine
+    to map inundation during the 2022 D.G. Khan floods. The event was challenging because flash flooding from the
+    Koh-e-Suleman hill torrents evolved rapidly, while optical observations were additionally constrained by monsoon cloud cover.
+  </p>
+  <p>
+    The workflow applied Sentinel-1 before / after change detection, terrain and permanent-water filtering, and
+    Sentinel-2 MNDWI-based water mapping. Detected flood areas were intersected with ESA WorldCover to estimate
+    cropland and built-up land exposed to the mapped inundation.
+  </p>
+  <div class="figure">
+    <img src="../assets/images/flood-study-area.jpg" alt="Map of the Dera Ghazi Khan flood-mapping study area">
+    <div class="caption">D.G. Khan study area used in the original conference analysis.</div>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2>Approach</h2>
+  <div class="workflow">
+    <div class="workflow-step"><div class="step-num">01</div><b>Sentinel-1</b><span>VH SAR · ascending / descending observations</span></div>
+    <div class="workflow-step"><div class="step-num">02</div><b>Change detection</b><span>Refined Lee filtering + before / after ratio</span></div>
+    <div class="workflow-step"><div class="step-num">03</div><b>Sentinel-2</b><span>Cloud masking + MNDWI water detection</span></div>
+    <div class="workflow-step"><div class="step-num">04</div><b>Filtering</b><span>Permanent water + slope constraints</span></div>
+    <div class="workflow-step"><div class="step-num">05</div><b>Exposure</b><span>Overlay with cropland and built-up land cover</span></div>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2>Flood Observations</h2>
+  <div class="figure-grid">
+    <div class="figure">
+      <img src="../assets/images/flood-sentinel1.jpg" alt="Flood extent mapped from Sentinel-1 ascending and descending SAR observations in D.G. Khan">
+      <div class="caption">Sentinel-1 observations from ascending and descending orbits.</div>
+    </div>
+    <div class="figure">
+      <img src="../assets/images/flood-sentinel2.jpg" alt="Flood water mapped from Sentinel-2 optical images on July 27 and August 31 2022">
+      <div class="caption">Sentinel-2 flood observations from two relatively usable optical dates.</div>
+    </div>
+  </div>
+  <p>
+    Rather than treating the different sensor results as a formal accuracy improvement, I now interpret them as
+    complementary observations of a rapidly evolving event: sensor type, cloud conditions and acquisition timing affected
+    which areas were observed as inundated.
+  </p>
+</section>
+
+<section class="content-section">
+  <h2>Land-Cover Exposure</h2>
+  <div class="figure">
+    <img src="../assets/images/flood-exposure.jpg" alt="Comparison of cropland and built-up area exposed to mapped flooding using Sentinel-1, Sentinel-2 and combined observations">
+    <div class="caption">Original comparison of mapped cropland and built-up exposure by sensor / combined observations.</div>
+  </div>
+  <div class="note">
+    <strong>Important limitation:</strong> the original work did not include an independent flood-validation dataset.
+    The land-cover overlay is therefore better interpreted as an <em>exposure assessment</em>, not a direct measurement
+    of physical or economic damage.
+  </div>
+</section>
+
+<section class="content-section">
+  <h2>Conference Output</h2>
+  <p>
+    <em>Mapping Flood Extent and Damage Assessment using Google Earth Engine</em> was presented at the
+    International Conference on Geo-Informatics for Water and Agricultural Resource Management,
+    University of Agriculture Faisalabad, 21–23 February 2024, and was included in the printed conference abstract book.
+  </p>
+  <div class="data-tools">
+    <span>Sentinel-1</span><span>Sentinel-2</span><span>Google Earth Engine</span><span>JRC Global Surface Water</span><span>HydroSHEDS</span><span>ESA WorldCover</span>
+  </div>
+</section>
+
+  </div>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <span>© 2026 Waqas Ahmad</span>
+    <span>Agricultural Engineering · Crop Modeling · Earth Observation</span>
+  </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

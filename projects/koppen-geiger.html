@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mapping Pakistan's Köppen-Geiger Climate Zones — project by Waqas Ahmad.">
+<title>Mapping Pakistan's Köppen-Geiger Climate Zones | Waqas Ahmad</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="../index.html">WAQAS AHMAD</a>
+    <button class="menu-btn" aria-label="Toggle navigation">☰</button>
+    <nav class="nav">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#outputs">Outputs</a>
+      <a href="../assets/Waqas_Ahmad_CV.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="project-page-hero">
+  <div class="container project-hero-grid">
+    <div class="project-hero-media">
+      <img src="../assets/images/koppen-map.jpg" alt="Köppen-Geiger climate classification map of Pakistan" data-fallback>
+      <span class="fallback-copy"></span>
+    </div>
+    <div>
+      <div class="label">Independent Climate-Data Analysis</div>
+      <h1>Mapping Pakistan's Köppen-Geiger Climate Zones</h1>
+      <p class="project-one-liner">A reproducible classification of Pakistan's 1991–2020 climate normal using ERA5-Land temperature and precipitation data.</p>
+      <div class="project-meta"><div class="meta-item"><b>Period</b><span>1991–2020</span></div><div class="meta-item"><b>Dataset</b><span>ERA5-Land Monthly Aggregates</span></div><div class="meta-item"><b>Framework</b><span>Peel et al. (2007)</span></div><div class="meta-item"><b>Tools</b><span>Google Earth Engine · R</span></div></div>
+      <a class="back" href="../index.html#projects">← Back to Projects</a>
+    </div>
+  </div>
+</section>
+<div class="project-body">
+  <div class="container content-width">
+    
+<section class="content-section">
+  <h2>Project Overview</h2>
+  <p>
+    I implemented the Köppen-Geiger climate classification for Pakistan using the Google Earth Engine
+    <code>ECMWF/ERA5_LAND/MONTHLY_AGGR</code> collection for January 1991 through December 2020.
+    Monthly temperature and precipitation data were processed into long-term climatological variables and classified
+    pixel-by-pixel according to the Peel et al. (2007) Köppen-Geiger criteria.
+  </p>
+  <p>
+    This was an exploratory climate-data analysis rather than a novel climate-classification study. Its value for my
+    portfolio is in implementing a published rule-based framework, processing long-term gridded climate data and
+    summarizing national-scale spatial patterns.
+  </p>
+</section>
+
+<section class="content-section">
+  <h2>Approach</h2>
+  <div class="workflow">
+    <div class="workflow-step"><div class="step-num">01</div><b>ERA5-Land</b><span>Monthly climate data · 1991–2020</span></div>
+    <div class="workflow-step"><div class="step-num">02</div><b>Climate normals</b><span>Temperature and precipitation summaries</span></div>
+    <div class="workflow-step"><div class="step-num">03</div><b>Diagnostics</b><span>Seasonal / annual variables required by the rule set</span></div>
+    <div class="workflow-step"><div class="step-num">04</div><b>Peel et al.</b><span>Köppen-Geiger thresholds applied per pixel</span></div>
+    <div class="workflow-step"><div class="step-num">05</div><b>Mapping</b><span>Climate classes and area summaries</span></div>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2>Climate Inputs</h2>
+  <div class="figure-grid">
+    <div class="figure">
+      <img src="../assets/images/koppen-temperature.jpg" alt="Mean annual temperature map of Pakistan derived from ERA5-Land climate data">
+      <div class="caption">Mean annual temperature from the original 1991–2020 analysis.</div>
+    </div>
+    <div class="figure">
+      <img src="../assets/images/koppen-precipitation.jpg" alt="Accumulated annual precipitation map of Pakistan derived from ERA5-Land climate data">
+      <div class="caption">Annual precipitation from the original analysis.</div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2>Output</h2>
+  <div class="figure">
+    <img src="../assets/images/koppen-map.jpg" alt="Köppen-Geiger climate classification map of Pakistan based on ERA5-Land 1991–2020">
+    <div class="caption">Initial Köppen-Geiger classification map produced from the ERA5-Land workflow.</div>
+  </div>
+  <p>
+    The classification captures a pronounced south-to-north climatic gradient: extensive arid lowlands in the south
+    and west transition toward temperate, cold and polar classes across the northern high-elevation regions.
+  </p>
+  <div class="note">
+    <strong>Scope:</strong> The original exercise did not include independent validation against a reference Köppen-Geiger
+    dataset. I therefore present it as a reproducible exploratory analysis rather than a validated national climate product.
+  </div>
+  <div class="data-tools">
+    <span>ERA5-Land</span><span>Google Earth Engine</span><span>R</span><span>Peel et al. (2007)</span><span>Climate Classification</span>
+  </div>
+</section>
+
+  </div>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <span>© 2026 Waqas Ahmad</span>
+    <span>Agricultural Engineering · Crop Modeling · Earth Observation</span>
+  </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

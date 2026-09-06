@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Multi-Decadal LULC Classification of Faisalabad — project by Waqas Ahmad.">
+<title>Multi-Decadal LULC Classification of Faisalabad | Waqas Ahmad</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="../index.html">WAQAS AHMAD</a>
+    <button class="menu-btn" aria-label="Toggle navigation">☰</button>
+    <nav class="nav">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#outputs">Outputs</a>
+      <a href="../assets/Waqas_Ahmad_CV.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="project-page-hero">
+  <div class="container project-hero-grid">
+    <div class="project-hero-media">
+      <img src="../assets/images/lulc-card.jpg" alt="Faisalabad land-use and land-cover classification map" data-fallback>
+      <span class="fallback-copy"></span>
+    </div>
+    <div>
+      <div class="label">Independent Geospatial Analysis</div>
+      <h1>Multi-Decadal LULC Classification of Faisalabad</h1>
+      <p class="project-one-liner">Random Forest classification of Landsat imagery from 2000, 2010 and 2020 to explore two decades of land-cover patterns and change.</p>
+      <div class="project-meta"><div class="meta-item"><b>Years</b><span>2000 · 2010 · 2020</span></div><div class="meta-item"><b>Data</b><span>Landsat 5 · Landsat 8</span></div><div class="meta-item"><b>Classifier</b><span>Random Forest</span></div><div class="meta-item"><b>Platform</b><span>Google Earth Engine</span></div></div>
+      <a class="back" href="../index.html#projects">← Back to Projects</a>
+    </div>
+  </div>
+</section>
+<div class="project-body">
+  <div class="container content-width">
+    
+<section class="content-section">
+  <h2>Project Overview</h2>
+  <p>
+    This independent analysis used Landsat imagery and Random Forest classification in Google Earth Engine to examine
+    land-cover patterns across Faisalabad for 2000, 2010 and 2020. Five classes were mapped:
+    forest / evergreen, cropland, built-up, bare / barren land and water.
+  </p>
+  <p>
+    Landsat 5 was used for 2000 and 2010, while Landsat 8 was used for 2020. Predictor variables included visible,
+    NIR, SWIR and thermal bands together with NDVI, NDBI, NDSI and MNDWI.
+  </p>
+</section>
+
+<section class="content-section">
+  <h2>Classification Outputs</h2>
+  <div class="figure">
+    <img src="../assets/images/lulc-three-years.jpg" alt="Land-use and land-cover maps of Faisalabad for 2020, 2010 and 2000">
+    <div class="caption">Original three-date LULC classification output.</div>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2>Accuracy Assessment</h2>
+  <table class="clean-table">
+    <thead><tr><th>Year</th><th>Overall accuracy</th><th>Kappa</th></tr></thead>
+    <tbody>
+      <tr><td>2000</td><td>78.66%</td><td>0.73</td></tr>
+      <tr><td>2010</td><td>72.28%</td><td>0.63</td></tr>
+      <tr><td>2020</td><td>77.68%</td><td>0.70</td></tr>
+    </tbody>
+  </table>
+  <div class="figure">
+    <img src="../assets/images/lulc-accuracy.jpg" alt="Methodology summary, accuracy statistics and confusion matrices for the Faisalabad LULC analysis">
+    <div class="caption">Methodology summary and confusion matrices from the original analysis.</div>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2>Scope &amp; Limitations</h2>
+  <p>
+    High-resolution historical reference imagery was limited, particularly for the earlier periods. Training and
+    reference interpretation therefore used available Google Earth imagery together with Landsat RGB, false-colour
+    and SWIR composites.
+  </p>
+  <p>
+    The confusion matrices also show substantial confusion between built-up and bare / barren surfaces, so the mapped
+    class-area changes are best interpreted as exploratory rather than precise measurements of land transition.
+  </p>
+  <div class="data-tools">
+    <span>Landsat 5 / 8</span><span>Random Forest</span><span>Google Earth Engine</span><span>NDVI</span><span>NDBI</span><span>MNDWI</span><span>Accuracy Assessment</span>
+  </div>
+</section>
+
+  </div>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <span>© 2026 Waqas Ahmad</span>
+    <span>Agricultural Engineering · Crop Modeling · Earth Observation</span>
+  </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>
