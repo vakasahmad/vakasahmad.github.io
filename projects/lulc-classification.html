@@ -38,7 +38,7 @@
           <div class="rp-kicker">Applied Earth Observation · Machine Learning</div>
           <h1>Multi-temporal Land Cover Classification of Faisalabad</h1>
           <p class="rp-deck">
-            A Random Forest workflow using Landsat imagery to classify broad land-cover patterns in 2010 and 2020, with emphasis on reference-data quality, temporal feature engineering and error diagnosis.
+            A Random Forest classification of Landsat imagery for 2010 and 2020 to develop land-cover map for Faisalabad district with limited reference data and to examine the main sources of classification error.
           </p>
 
           <div class="rp-tags" aria-label="Project keywords">
@@ -74,15 +74,15 @@
 
       <div class="rp-copy">
         <p>
-          This project explored a consistent supervised classification workflow across two Landsat eras under limited historical reference information. Five broad classes were mapped: <strong>Tree Cover, Cropland, Built-up, Bare Surface and Water</strong>.
+          The project used a supervised Landsat classification workflow to map five broad land-cover classes in Faisalabad district for 2010 and 2020 which included Tree Cover, Cropland, Built-up, Bare Surface and Water.
         </p>
         <p>
-          Reference polygons were interpreted independently for each year. The 2020 samples could be checked against historical high-resolution imagery and Landsat time series, while the 2010 samples relied more strongly on Landsat composites, spectral indices, seasonal behaviour and historical imagery where available.
+          Reference polygons were prepared separately for each year. For 2020, samples could be checked against high-resolution imagery (Google Earth Pro) and Landsat time series. For 2010, reference data were more limited, so interpretation relied more on Landsat composites, spectral indices, seasonal patterns and historical imagery where available.
         </p>
 
         <div class="rp-question">
           <span>Research focus</span>
-          <p>How can a supervised Landsat classification be made more defensible when historical reference information is limited and spectral confusion is concentrated in mixed or dynamic land-cover settings?</p>
+          <p>How can Landsat imagery and limited reference data be used to produce a reliable land-cover classification and identify the main sources of classification error?</p>
         </div>
       </div>
     </div>
@@ -92,16 +92,16 @@
     <div class="container rp-content">
       <div class="rp-section-heading">
         <div class="rp-kicker">Approach</div>
-        <h2>Classification, temporal features and error analysis</h2>
-        <p>The workflow combined standard spectral information with seasonal and temporal diagnostics, then used spatial error inspection to identify ambiguous reference samples and mixed pixels.</p>
+        <h2>Landsat classification and error analysis</h2>
+        <p>The workflow combined Landsat spectral information, seasonal indicators and manually prepared reference samples to train a Random Forest classifier and examine the main sources of classification error.</p>
       </div>
 
       <div class="rp-workflow">
-        <article><span>01</span><h3>Preprocessing</h3><p>Collection 2 Level-2 imagery, scaling, cloud/shadow and saturation masking.</p></article>
-        <article><span>02</span><h3>Feature engineering</h3><p>Optical bands, temperature, NDVI, MNDWI, NDBI, BSI and seasonal metrics.</p></article>
-        <article><span>03</span><h3>Reference data</h3><p>Year-specific polygons placed within visually homogeneous land-cover patches.</p></article>
-        <article><span>04</span><h3>Random Forest</h3><p>300-tree model with class-stratified polygon-level training and validation split.</p></article>
-        <article><span>05</span><h3>Error diagnosis</h3><p>Confusion patterns examined spatially to refine ambiguous samples and temporal features.</p></article>
+        <article><span>01</span><h3>Preprocessing</h3><p>Landsat Collection 2 Level-2 imagery with scaling, cloud, shadow and saturation masking.</p></article>
+        <article><span>02</span><h3>Feature engineering</h3><p>Spectral bands, land surface temperature, NDVI, MNDWI, NDBI, BSI and seasonal vegetation metrics.</p></article>
+        <article><span>03</span><h3>Reference data</h3><p>Year-specific polygons prepared within visually homogeneous land-cover areas.</p></article>
+        <article><span>04</span><h3>Random Forest</h3><p>300-tree classifier trained and evaluated using separate reference polygons.</p></article>
+        <article><span>05</span><h3>Error diagnosis</h3><p>Misclassified areas were examined to identify confusion between classes and improve the reference samples.</p></article>
       </div>
     </div>
   </section>
@@ -112,7 +112,7 @@
         <div class="rp-kicker">Results</div>
         <h2>2010 and 2020 land-cover classification</h2>
         <p>
-          Cropland remained the dominant mapped class in both years, while the classified built-up footprint was larger in 2020. Cross-year differences in bare surface, water and tree cover are interpreted more cautiously because reference quality, river conditions and mixed pixels affect direct comparability.
+          Cropland remained the dominant mapped class in both years, while the built-up area was larger in the 2020 classification. Changes in bare surface, water and tree cover were interpreted more cautiously because differences in reference data, river conditions and mixed pixels made direct comparison between the two years less certain.
         </p>
       </div>
 
@@ -135,20 +135,20 @@
       <div class="rp-interpret-grid">
         <div class="rp-copy">
           <p>
-            Error analysis showed that exposed riverine surfaces could be confused with built-up land in the 2010 imagery. Adding temporal MNDWI and BSI statistics, together with targeted samples for moist exposed surfaces, reduced this error along the Ravi corridor.
+            The error analysis showed that exposed river surfaces and some bare areas were occasionally confused with built-up land in the 2010 imagery. In rural settlements, this was likely related to mud-built structures and surrounding bare soil having similar spectral responses, while mixed 30 m Landsat pixels added further uncertainty. 
           </p>
           <p>
-            A separate audit of the 2020 Tree Cover predictions revealed mixed 30 m pixels where cropland contained field-boundary trees, roadside vegetation or canal trees. Adding representative cropland samples from these mixed settings reduced over-prediction of Tree Cover.
+            For 2020, some Tree Cover errors occurred in mixed 30 m pixels where cropland also contained field-boundary trees, roadside vegetation or trees along canals. Adding more representative cropland samples from these areas helped reduce the over-prediction of Tree Cover.
           </p>
           <p>
-            Historical reference information was substantially weaker for 2010 than for 2020, and the validation is an internal polygon-level holdout rather than independent ground validation. The 2010–2020 comparison is therefore treated as exploratory rather than as a precise change-detection product.
+            Historical reference information was more limited for 2010 than for 2020, and the validation was based on held-out reference polygons rather than independent ground observations. The comparison between 2010 and 2020 is therefore exploratory in nature rather than as an accurate land-cover change assessment.
           </p>
         </div>
 
         <aside class="rp-status-card">
           <span>Research takeaway</span>
-          <h3>Model improvement came from diagnosing where and why errors occurred, not simply from increasing classifier complexity.</h3>
-          <p>Temporal wetness/soil features and targeted hard-negative reference samples were more useful than treating all confusion as random model error.</p>
+          <h3>Most improvements came from understanding the classification errors and improving the reference data rather than making the model more complex.</h3>
+          <p>Temporal wetness and soil information, together with better representation of difficult land-cover areas, helped address some of the main sources of confusion.</p>
         </aside>
       </div>
     </div>

@@ -35,10 +35,10 @@
         </div>
 
         <div class="rp-hero-copy">
-          <div class="rp-kicker">Climate Analysis · Reproducible Geospatial Workflow</div>
+          <div class="rp-kicker">Climate Analysis · Geospatial Classification</div>
           <h1>Köppen-Geiger Climate Classification of Pakistan</h1>
           <p class="rp-deck">
-            A reproducible 1991–2020 climate classification using TerraClimate and the Peel et al. framework, evaluated through spatial comparison with the Beck et al. (2023) global Köppen-Geiger product.
+            A 1991–2020 climate classification of Pakistan using TerraClimate data and the Peel et al. (2007) framework.
           </p>
 
           <div class="rp-tags" aria-label="Project keywords">
@@ -67,20 +67,20 @@
     <div class="container rp-content">
       <div class="rp-section-heading">
         <div class="rp-kicker">Context</div>
-        <h2>From climate data to a reproducible classification</h2>
+        <h2>Climate classification for agroecological work</h2>
       </div>
 
       <div class="rp-copy">
         <p>
-          The project originated while exploring climatic information relevant to agroecological zoning. Rather than treating climate classes as complete agroecological zones, I focused specifically on implementing a reproducible climate-classification workflow based on the published Köppen-Geiger decision rules.
+          This project was developed while supporting a team at the Precision Agriculture Lab working on an update of agroecological zoning for Punjab which was published in 2019. As part of that work, I prepared a Köppen-Geiger climate classification for Pakistan using long-term temperature and precipitation data.
         </p>
         <p>
-          Thirty years of monthly temperature and precipitation data were summarized into climatological variables required by the Peel et al. (2007) framework and classified in R. The resulting map was then compared with the independent 1991–2020 high-resolution Köppen-Geiger product of Beck et al. (2023).
+          Thirty years of monthly TerraClimate data were summarized into the climatological variables required by the Peel et al. (2007) framework. The published classification rules were then implemented in R to assign Köppen-Geiger climate classes and map their distribution across Pakistan.
         </p>
 
         <div class="rp-question">
           <span>Research focus</span>
-          <p>How effectively can a TerraClimate 1991–2020 climatology reproduce the spatial structure of Köppen-Geiger climate classes across Pakistan's strong aridity and elevation gradients?</p>
+          <p>How do the major Köppen-Geiger climate classes vary across Pakistan based on the 1991–2020 climatology?</p>
         </div>
       </div>
     </div>
@@ -90,13 +90,13 @@
     <div class="container rp-content">
       <div class="rp-section-heading">
         <div class="rp-kicker">Approach</div>
-        <h2>Climatology, rule-based classification and independent comparison</h2>
-        <p>The workflow translated a published climatic decision framework into reproducible geospatial code and then evaluated consistency against an established external product.</p>
+        <h2>Climatology, rule-based classification and comparison</h2>
+        <p>The workflow converted long-term temperature and precipitation data into the variables required by the Köppen-Geiger framework, applied the published classification rules, and compared the resulting map with the Beck et al. (2023) product.</p>
       </div>
 
       <div class="rp-workflow">
         <article><span>01</span><h3>TerraClimate</h3><p>Monthly temperature and precipitation for the 1991–2020 climate normal.</p></article>
-        <article><span>02</span><h3>Climate normals</h3><p>12 monthly temperature and 12 monthly precipitation climatologies.</p></article>
+        <article><span>02</span><h3>Climate normals</h3><p>Monthly temperature and precipitation climatologies calculated over the 30-year period.</p></article>
         <article><span>03</span><h3>Diagnostics</h3><p>Annual and seasonal variables required by the Köppen-Geiger decision rules.</p></article>
         <article><span>04</span><h3>Classification</h3><p>Peel et al. thresholds implemented in R using terra.</p></article>
         <article><span>05</span><h3>Benchmarking</h3><p>Cell-by-cell comparison with Beck et al. (2023) after grid alignment.</p></article>
@@ -108,9 +108,9 @@
     <div class="container rp-content">
       <div class="rp-section-heading">
         <div class="rp-kicker">Results</div>
-        <h2>Strong agreement with an independent published product</h2>
+        <h2>General agreement with the published reference</h2>
         <p>
-          The TerraClimate-derived map reproduced the dominant climatic structure of the published reference while retaining expected differences near climatic thresholds and in topographically complex northern regions.
+          The TerraClimate-derived classification reproduced the main spatial pattern of the published Köppen-Geiger map, with differences concentrated near climatic boundaries and in the topographically complex northern regions.
         </p>
       </div>
 
@@ -138,13 +138,10 @@
       <div class="rp-interpret-grid">
         <div class="rp-copy">
           <p>
-            The classification achieved <strong>86.0% area-weighted spatial agreement</strong> across the 30 Köppen-Geiger subclasses and <strong>93.3% agreement</strong> across the five major climate groups when compared with Beck et al. (2023).
+            The classification showed 86.0% area-weighted spatial agreement across the 30 Köppen-Geiger subclasses and 93.3% agreement across the five major climate groups when compared with Beck et al. (2023).
           </p>
           <p>
-            These values represent spatial agreement between independently derived climate products, not classification accuracy against ground observations. Disagreement was concentrated mainly around major climatic boundaries, including cold-to-polar transitions in the northern mountains and arid-to-temperate transitions farther south.
-          </p>
-          <p>
-            The exercise demonstrates how a published classification framework can be translated into code, independently implemented, quantitatively benchmarked and interpreted with attention to data resolution and threshold sensitivity.
+            These values represent spatial agreement between two independently derived climate classifications, not classification accuracy against ground observations. Disagreement was concentrated mainly around climatic boundaries, including cold-to-polar transitions in the northern mountains and arid-to-temperate transitions farther south.
           </p>
         </div>
 

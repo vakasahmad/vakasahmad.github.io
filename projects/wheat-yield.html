@@ -98,7 +98,7 @@
       <div class="rp-context-grid">
         <div class="rp-copy">
           <p>
-            Crop-yield estimation becomes particularly difficult in data-scarce environments where field observations, management records, and even basic phenological information such as sowing and harvest dates may be limited or unavailable. Building on the METRIC–CropSyst framework proposed by Khan et al. (2019), my MSc research evaluated its applicability for wheat production in Pakistan under contrasting rainfed and irrigated conditions. The work focused on adapting key model parameters to local conditions and deriving seasonal phenology dynamically from Landsat NDVI time series so that the framework could operate with minimal field information.
+            Crop-yield estimation becomes particularly difficult in data-scarce environments where field observations, management records, and even basic phenological information such as sowing and harvest dates may be limited or unavailable. Building on the METRIC–CropSyst framework proposed by Khan et al. (2019), my MSc research evaluated its applicability for wheat production in Pakistan under rainfed and irrigated conditions. The work focused on adapting key model parameters to local conditions and deriving seasonal phenology dynamically from Landsat NDVI time series so that the framework could operate with minimal field information.
           </p>
           <div class="rp-question">
             <span>Research focus</span>
@@ -123,7 +123,7 @@
         <div class="rp-kicker">Approach</div>
         <h2>From satellite observations to crop-model constraints</h2>
         <p>
-          The workflow linked remotely sensed canopy state, evapotranspiration and phenology with crop-growth and water-use algorithms derived from CropSyst. Landsat NDVI observations were interpolated to a daily time step using cubic splines, used to estimate leaf area index (LAI), and analysed to derive start, peak and end of season (SOS, POS and EOS). EEFlux evapotranspiration fraction (ETrF) was similarly interpolated and combined with daily reference evapotranspiration to estimate actual evapotranspiration (ETa). LAI was then used to partition ETa into soil evaporation and crop transpiration, following the METRIC–CropSyst approach. Crop transpiration was converted to above-ground biomass using a transpiration-use-efficiency formulation and grain yield was later estimated from biomass using a curvilinear harvest-index relationship.
+          The workflow linked remotely sensed canopy state, evapotranspiration and phenology with crop-growth and water-use algorithms derived from CropSyst. Landsat NDVI observations were interpolated using cubic spline to a daily time step to estimate leaf area index (LAI) and derive start, peak and end of season (SOS, POS and EOS). EEFlux evapotranspiration fraction (ETrF) was similarly interpolated and combined with daily reference evapotranspiration to estimate actual evapotranspiration (ETa). LAI was then used to partition ETa into soil evaporation and crop transpiration, following the METRIC–CropSyst approach. Crop transpiration was converted to above-ground biomass using a transpiration-use-efficiency formulation (Stöckle et al., 2008) and grain yield was later estimated from biomass using a curvilinear harvest-index relationship (Kemanian et al., 2007).
         </p>
       </div>
 
@@ -135,8 +135,8 @@
         </article>
         <article>
           <span>02</span>
-          <h3>NDVI → LAI</h3>
-          <p>Satellite-based estimation of canopy development through the season.</p>
+          <h3>NDVI → LAI &amp; Phenology</h3>
+	  <p>Satellite-based estimation of canopy development and seasonal timing, including SOS, POS and EOS.</p>
         </article>
         <article>
           <span>03</span>
@@ -145,13 +145,13 @@
         </article>
         <article>
           <span>04</span>
-          <h3>Phenology</h3>
-          <p>Seasonal timing derived from NDVI trajectories, including SOS, POS and EOS.</p>
+          <h3>CropSyst</h3>
+          <p>Forced assimilation of satellite-derived LAI, ETa and phenology into a simplified CropSyst growth framework.</p>
         </article>
         <article>
           <span>05</span>
-          <h3>CropSyst</h3>
-          <p>CropSyst-derived transpiration-use-efficiency algorithms for biomass production, followed by harvest-index-based grain yield estimation.</p>
+          <h3>Wheat Yield</h3>
+          <p>Curvilinear harvest-index relationship for grain yield estimation.</p>
         </article>
       </div>
     </div>
@@ -166,7 +166,7 @@
         <div class="rp-kicker">Results</div>
         <h2>Selected research outputs</h2>
         <p>
-          Satellite-derived NDVI timeseries captured the seasonal development of wheat at both rainfed and irrigated sites and were used to identify start, peak and end of season (SOS, POS and EOS) across the four growing seasons. Yield estimates from the METRIC–CropSyst framework showed stronger agreement with observations at the irrigated site than at the rainfed site. At the rainfed site, RMSE, MAE and MAPE were 394.10 kg ha⁻¹, 262.08 kg ha⁻¹ and 13.20%, respectively. At the irrigated site, the corresponding errors were 125.47 kg ha⁻¹, 114.52 kg ha⁻¹ and 4.07%. 
+          Satellite-derived NDVI time series captured the seasonal development of wheat at both rainfed and irrigated sites, and the estimated seasonality parameters (SOS, POS and EOS) agreed well with established regional crop calendars and literature across the four growing seasons. Yield estimates from the METRIC–CropSyst framework showed stronger agreement with observations at the irrigated site than at the rainfed site. At the rainfed site, RMSE, MAE and MAPE were 394.10 kg ha⁻¹, 262.08 kg ha⁻¹ and 13.20%, respectively. At the irrigated site, the corresponding errors were 125.47 kg ha⁻¹, 114.52 kg ha⁻¹ and 4.07%. 
         </p>
       </div>
 
@@ -175,7 +175,7 @@
           <img src="../assets/images/wheat-yield/wheat-ndvi-phenology.jpg" alt="Time-series figure comparing NDVI timeseries and wheat phenology">
           <figcaption>
             <strong>Crop development and phenology.</strong>
-            Daily satellite-derived NDVI timeseries and phenological metrics (SOS, POS and EOS)results across the wheat growing seasons.
+            Daily satellite-derived NDVI time series and phenological metrics (SOS, POS and EOS) across the wheat growing seasons.
           </figcaption>
         </figure>
 
@@ -203,12 +203,11 @@
       <div class="rp-interpret-grid">
         <div class="rp-copy">
           <p>
-            The framework performed more consistently at the irrigated site than at the rainfed site. The larger errors under rainfed conditions may partly reflect the relatively small field sizes compared with the native spatial resolution of the Landsat thermal observations used by METRIC. At approximately 100 m native resolution for Landsat 8 thermal data, individual pixels may include signals from adjacent fields with different crops or management conditions, which can influence satellite-derived evapotranspiration estimates.
+            The framework performed more consistently at the irrigated site than at the rainfed site. The larger errors under rainfed conditions may partly reflect the relatively small field sizes compared with the native spatial resolution of the Landsat thermal observations used by METRIC. At approximately 100m native resolution for Landsat-8 thermal data, individual pixels may include signals from adjacent fields with different crops or management conditions, which can influence satellite-derived evapotranspiration estimates.
+	  </p>
           <p>
 	    The main contribution of this work was the application and adaptation of the METRIC–CropSyst framework to a data-scarce agricultural setting in Pakistan. Model parameters were adjusted for local wheat conditions, while a dynamic phenology workflow was introduced to derive SOS, POS and EOS directly from Landsat NDVI time series. This reduced reliance on field-recorded sowing, peak-growth and harvest information, which is often unavailable or inconsistent in the study environment.
-          </p>
-	  <p>
-   
+          
           </p>
         </div>
 

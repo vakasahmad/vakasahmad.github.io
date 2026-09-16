@@ -38,7 +38,7 @@
           <div class="rp-kicker">Applied Earth Observation · Flood Hazard Mapping</div>
           <h1>Multi-Sensor Flood Mapping and Land-Cover Exposure Assessment</h1>
           <p class="rp-deck">
-            Combining Sentinel-1 SAR and Sentinel-2 optical observations to reconstruct a rapidly evolving 2022 flood event in Dera Ghazi Khan and estimate agricultural land exposed to mapped inundation.
+            Combining Sentinel-1 SAR and Sentinel-2 optical imagery to map the 2022 flood in Dera Ghazi Khan and estimate agricultural land affected by inundation.
           </p>
 
           <div class="rp-tags" aria-label="Project keywords">
@@ -74,10 +74,10 @@
       <div class="rp-context-grid">
         <div class="rp-copy">
           <p>
-            During the 2022 Pakistan floods, I was asked at the University of Agriculture Faisalabad to produce a rapid estimate of flood-affected areas in Dera Ghazi Khan under a short operational timeframe. The event combined hill-torrent flooding from the Sulaiman Range with later riverine flooding along the Indus, while persistent monsoon cloud cover and satellite acquisition timing made peak inundation difficult to observe directly.
+            During the 2022 Pakistan floods, I was tasked to produce a rapid estimate of flood-affected areas in Dera Ghazi Khan within a short timeframe, with main focus on affected cropland. The event was initially triggered by heavy monsoon rainfall, which caused hill-torrent flooding from the Sulaiman Range, followed by riverine flooding along the Indus. Continuous monsoon cloud cover and satellite acquisition timing made peak inundation difficult to capture directly using open-source satellite data.
           </p>
           <p>
-            I later revisited the original workflow to make it more defensible: Sentinel-1 relative orbits were handled separately, pre-event baselines were refined, and radar and optical detections were treated as complementary observations rather than being forced to agree.
+            I later revisited the workflow to improve the analysis, including separate handling of Sentinel-1 relative orbits, refinement of pre-event baselines, and use of radar and optical observations as complementary sources of flood information. The updated work was later presented at ICGWARM conference at UAF.
           </p>
 
           <div class="rp-question">
@@ -98,18 +98,18 @@
     <div class="container rp-content">
       <div class="rp-section-heading">
         <div class="rp-kicker">Approach</div>
-        <h2>Multi-sensor flood detection and exposure mapping</h2>
+        <h2>Multi-sensor flood mapping and cropland exposure</h2>
         <p>
-          The workflow retained the different strengths of radar and optical observations, then combined the mapped flood detections for land-cover exposure analysis.
+          The workflow used Sentinel-1 radar and Sentinel-2 optical imagery to identify inundated areas across multiple dates and estimate the agricultural land affected by flooding.
         </p>
       </div>
 
       <div class="rp-workflow">
-        <article><span>01</span><h3>Sentinel-1 SAR</h3><p>Orbit-specific VH observations with late-May / early-June pre-event baselines.</p></article>
-        <article><span>02</span><h3>Change detection</h3><p>Before/after backscatter ratios with permanent-water, terrain and connectivity filtering.</p></article>
-        <article><span>03</span><h3>Sentinel-2</h3><p>Cloud-masked optical observations with MNDWI-based surface-water detection.</p></article>
+        <article><span>01</span><h3>Sentinel-1 SAR</h3><p>Orbit-specific VH observations using late-May and early-June pre-flood baselines.</p></article>
+        <article><span>02</span><h3>Change detection</h3><p>Before-and-after backscatter ratios with permanent-water, terrain and connectivity filtering.</p></article>
+        <article><span>03</span><h3>Sentinel-2</h3><p>Cloud-masked optical imagery with MNDWI-based surface-water detection.</p></article>
         <article><span>04</span><h3>Temporal comparison</h3><p>Multi-date observations retained to show when and where inundation was observed.</p></article>
-        <article><span>05</span><h3>Exposure</h3><p>Combined flood detections intersected with ESA WorldCover land-cover classes.</p></article>
+        <article><span>05</span><h3>Exposure</h3><p>Mapped flood extent intersected with ESA WorldCover to estimate affected cropland and other land-cover classes.</p></article>
       </div>
     </div>
   </section>
@@ -162,16 +162,16 @@
     <div class="container rp-content">
       <div class="rp-section-heading">
         <div class="rp-kicker">Interpretation &amp; limitations</div>
-        <h2>What the analysis supports</h2>
+        <h2>What the analysis shows</h2>
       </div>
 
       <div class="rp-interpret-grid">
         <div class="rp-copy">
           <p>
-            The cumulative S1/S2 footprint represented approximately <strong>1,402.6 km²</strong> of satellite-observed inundation, of which about <strong>988.3 km²</strong> overlapped cropland. This is best interpreted as an exposure estimate rather than a direct measure of physical or economic damage.
+            The combined Sentinel-1 and Sentinel-2 flood footprint covered approximately 1,402.6 km² out of which about 988.3 km² overlapped with ESA WorldCover cropland. These values represent an estimation of area observed as inundated in the available satellite imagery.
           </p>
           <p>
-            Short-duration hill torrents may have passed between acquisitions, cloud cover restricted the optical record, and no independent field-based flood boundary was available for formal validation. The final map therefore represents observed inundation over the available satellite record rather than a reconstruction of the absolute maximum flood extent.
+            Some short-duration hill-torrent flooding may have occurred between satellite acquisitions, while cloud cover limited the Sentinel-2 observations. No independent field-based flood boundary was available for formal validation. The final map therefore represents inundation detected across the available satellite record rather than the absolute maximum flood extent. The work provides a practical and simple workflow to rapidly estimate flood-affected areas using open-source satellite data.
           </p>
         </div>
 
