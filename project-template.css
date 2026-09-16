@@ -1,0 +1,457 @@
+/* =========================================================
+   MASTER RESEARCH PROJECT TEMPLATE
+   Scoped under .research-project so the homepage is untouched.
+   Load AFTER styles.css.
+   ========================================================= */
+
+.research-project {
+  --rp-max: 1180px;
+  --rp-copy: 900px;
+}
+
+.research-project .rp-hero {
+  padding: 72px 0 54px;
+}
+
+.research-project .rp-hero-shell {
+  width: min(calc(100% - 40px), var(--rp-max));
+}
+
+.research-project .rp-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 54px;
+  align-items: center;
+}
+
+.research-project .rp-hero-visual {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+.research-project .rp-hero-visual img {
+  width: 100%;
+  aspect-ratio: 1.34 / 1;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  border-radius: 14px;
+  background: #fbfcfa;
+}
+
+.research-project .rp-kicker {
+  color: var(--accent);
+  font-size: .75rem;
+  font-weight: 900;
+  letter-spacing: .115em;
+  text-transform: uppercase;
+}
+
+.research-project .rp-hero-copy h1 {
+  margin: 10px 0 20px;
+  max-width: 650px;
+  font-size: clamp(2.35rem, 3.45vw, 3.25rem);
+  line-height: .99;
+  letter-spacing: -.055em;
+}
+
+.research-project .rp-deck {
+  margin: 0;
+  max-width: 650px;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 1.45vw, 1.22rem);
+  line-height: 1.62;
+}
+
+.research-project .rp-meta-strip {
+  margin-top: 34px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 44px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.research-project .rp-meta-item {
+  flex: 1 1 180px;
+  min-width: 0;
+  padding: 15px 0;
+}
+
+.research-project .rp-meta-item span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--accent);
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .085em;
+  text-transform: uppercase;
+}
+
+.research-project .rp-meta-item strong {
+  display: block;
+  font-size: .88rem;
+  line-height: 1.45;
+}
+
+.research-project .rp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 22px;
+}
+
+.research-project .rp-tags span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: .74rem;
+  font-weight: 780;
+}
+
+.research-project .rp-back {
+  display: inline-block;
+  margin-top: 30px;
+  color: var(--accent-dark);
+  font-size: .88rem;
+  font-weight: 850;
+}
+
+/* ---------------------------------------------------------
+   BODY
+   --------------------------------------------------------- */
+
+.research-project .rp-section {
+  padding: 70px 0;
+  border-top: 1px solid rgba(220, 227, 221, .82);
+}
+
+.research-project .rp-section-soft {
+  background: rgba(240, 243, 239, .48);
+}
+
+.research-project .rp-section-last {
+  padding-bottom: 90px;
+}
+
+.research-project .rp-content {
+  width: min(calc(100% - 40px), var(--rp-max));
+}
+
+.research-project .rp-section-heading {
+  max-width: var(--rp-copy);
+  margin-bottom: 30px;
+}
+
+.research-project .rp-section-heading h2 {
+  margin: 7px 0 12px;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -.042em;
+}
+
+.research-project .rp-section-heading > p {
+  margin: 0;
+  max-width: 820px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.research-project .rp-copy p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 17px;
+}
+
+.research-project .rp-copy strong {
+  color: var(--text);
+}
+
+/* Context with supporting figure */
+.research-project .rp-context-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, .55fr);
+  gap: 38px;
+  align-items: start;
+}
+
+.research-project .rp-side-figure {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.research-project .rp-side-figure img {
+  width: 100%;
+  aspect-ratio: 1.15 / 1;
+  object-fit: contain;
+  display: block;
+  background: #fbfcfa;
+  padding: 10px;
+}
+
+.research-project .rp-side-figure figcaption,
+.research-project .rp-figure-card figcaption {
+  padding: 12px 14px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .8rem;
+  line-height: 1.5;
+}
+
+.research-project .rp-question {
+  margin-top: 24px;
+  padding: 17px 18px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 12px 12px 0;
+  background: var(--accent-soft);
+}
+
+.research-project .rp-question span {
+  color: var(--accent-dark);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.research-project .rp-question p {
+  margin: 5px 0 0;
+  color: var(--accent-dark);
+  font-size: .95rem;
+  line-height: 1.6;
+}
+
+/* Workflow */
+.research-project .rp-workflow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.research-project .rp-workflow article {
+  min-width: 0;
+  padding: 17px 16px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 15px;
+}
+
+.research-project .rp-workflow article > span {
+  color: var(--accent);
+  font-size: .69rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.research-project .rp-workflow h3 {
+  margin: 7px 0 5px;
+  font-size: .92rem;
+  line-height: 1.3;
+}
+
+.research-project .rp-workflow p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .78rem;
+  line-height: 1.5;
+}
+
+/* Results */
+.research-project .rp-results-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.research-project .rp-figure-card {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.research-project .rp-figure-card img {
+  width: 100%;
+  aspect-ratio: 1.38 / 1;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: #fbfcfa;
+  padding: 10px;
+}
+
+.research-project .rp-figure-card figcaption strong {
+  color: var(--text);
+}
+
+/* Interpretation / status */
+.research-project .rp-interpret-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr);
+  gap: 36px;
+  align-items: start;
+}
+
+.research-project .rp-status-card {
+  padding: 22px;
+  background: var(--text);
+  color: #fff;
+  border-radius: 18px;
+}
+
+.research-project .rp-status-card > span {
+  display: block;
+  margin-bottom: 10px;
+  color: #b9c9bf;
+  font-size: .7rem;
+  font-weight: 900;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.research-project .rp-status-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.04rem;
+  line-height: 1.45;
+}
+
+.research-project .rp-status-card p {
+  margin: 0;
+  color: #cbd5ce;
+  font-size: .82rem;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 980px) {
+  .research-project .rp-hero-grid,
+  .research-project .rp-context-grid,
+  .research-project .rp-interpret-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-project .rp-hero-visual {
+    max-width: 760px;
+  }
+
+
+  .research-project .rp-workflow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .research-project .rp-hero,
+  .research-project .rp-section {
+    padding-top: 54px;
+    padding-bottom: 54px;
+  }
+
+  .research-project .rp-hero-shell,
+  .research-project .rp-content {
+    width: min(calc(100% - 28px), var(--rp-max));
+  }
+
+  .research-project .rp-hero-grid {
+    gap: 28px;
+  }
+
+  .research-project .rp-hero-copy h1 {
+    font-size: clamp(2.15rem, 10vw, 3rem);
+  }
+
+  .research-project .rp-meta-strip {
+    gap: 0 24px;
+  }
+
+  .research-project .rp-meta-item {
+    flex-basis: calc(50% - 12px);
+    padding: 12px 0;
+  }
+
+  .research-project .rp-workflow,
+  .research-project .rp-results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-project .rp-side-figure {
+    max-width: 560px;
+  }
+}
+
+/* =========================================================
+   FLOOD MAPPING — RESULTS LAYOUT
+   ========================================================= */
+
+.research-project .flood-results-top{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.research-project .rp-figure-card.flood-results-main{
+  width:min(760px, 100%);
+  margin:36px auto 0;
+}
+
+@media(max-width:720px){
+  .research-project .flood-results-top{
+    grid-template-columns:1fr;
+  }
+
+  .research-project .rp-figure-card.flood-results-main{
+    width:100%;
+    margin:24px auto 0;
+  }
+}
+
+/* =========================================================
+   LULC Mapping — RESULTS FIGURE LAYOUT
+   ========================================================= */
+
+.research-project .rp-figure-card.lulc-results-main{
+  width:min(800px, 100%);
+  margin:0 auto;
+  grid-column:1 / -1;
+}
+
+/* =========================================================
+   PROJECT REFERENCES
+   ========================================================= */
+
+.research-project .rp-reference-list{
+  margin: 0;
+  padding-left: 1.25rem;
+  max-width: 900px;
+}
+
+.research-project .rp-reference-list li{
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: .86rem;
+  line-height: 1.55;
+}
+
+.research-project .rp-reference-list em{
+  color: var(--text);
+}
+
+.research-project .rp-reference-list a{
+  margin-left: 5px;
+  color: var(--accent-dark);
+  font-weight: 700;
+}

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Köppen-Geiger Climate Classification of Pakistan using TerraClimate 1991–2020 — project by Waqas Ahmad.">
+<title>Köppen-Geiger Climate Classification of Pakistan | Waqas Ahmad</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../project-template.css">
+</head>
+<body class="research-project">
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="../index.html">WAQAS AHMAD</a>
+    <button class="menu-btn" aria-label="Toggle navigation">☰</button>
+    <nav class="nav">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#outputs">Outputs</a>
+      <a href="../assets/Waqas_Ahmad_CV.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="rp-hero">
+    <div class="container rp-hero-shell">
+      <div class="rp-hero-grid">
+        <div class="rp-hero-visual">
+          <img src="../assets/images/koppen-geiger/Koppen-hero-image.jpg" alt="TerraClimate-derived Köppen-Geiger climate classification of Pakistan for 1991 to 2020">
+        </div>
+
+        <div class="rp-hero-copy">
+          <div class="rp-kicker">Climate Analysis · Reproducible Geospatial Workflow</div>
+          <h1>Köppen-Geiger Climate Classification of Pakistan</h1>
+          <p class="rp-deck">
+            A reproducible 1991–2020 climate classification using TerraClimate and the Peel et al. framework, evaluated through spatial comparison with the Beck et al. (2023) global Köppen-Geiger product.
+          </p>
+
+          <div class="rp-tags" aria-label="Project keywords">
+            <span>TerraClimate</span>
+            <span>Peel et al. (2007)</span>
+            <span>R · terra</span>
+            <span>Google Earth Engine</span>
+            <span>Climate Classification</span>
+            <span>Spatial Agreement</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rp-meta-strip" aria-label="Project metadata">
+        <div class="rp-meta-item"><span>Climate normal</span><strong>1991–2020</strong></div>
+        <div class="rp-meta-item"><span>Primary dataset</span><strong>TerraClimate · ~4.6 km</strong></div>
+        <div class="rp-meta-item"><span>Framework</span><strong>Peel et al. (2007)</strong></div>
+        <div class="rp-meta-item"><span>Benchmark</span><strong>Beck et al. (2023)</strong></div>
+      </div>
+
+      <a class="rp-back" href="../index.html#projects">← Back to Projects</a>
+    </div>
+  </section>
+
+  <section class="rp-section">
+    <div class="container rp-content">
+      <div class="rp-section-heading">
+        <div class="rp-kicker">Context</div>
+        <h2>From climate data to a reproducible classification</h2>
+      </div>
+
+      <div class="rp-copy">
+        <p>
+          The project originated while exploring climatic information relevant to agroecological zoning. Rather than treating climate classes as complete agroecological zones, I focused specifically on implementing a reproducible climate-classification workflow based on the published Köppen-Geiger decision rules.
+        </p>
+        <p>
+          Thirty years of monthly temperature and precipitation data were summarized into climatological variables required by the Peel et al. (2007) framework and classified in R. The resulting map was then compared with the independent 1991–2020 high-resolution Köppen-Geiger product of Beck et al. (2023).
+        </p>
+
+        <div class="rp-question">
+          <span>Research focus</span>
+          <p>How effectively can a TerraClimate 1991–2020 climatology reproduce the spatial structure of Köppen-Geiger climate classes across Pakistan's strong aridity and elevation gradients?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section rp-section-soft">
+    <div class="container rp-content">
+      <div class="rp-section-heading">
+        <div class="rp-kicker">Approach</div>
+        <h2>Climatology, rule-based classification and independent comparison</h2>
+        <p>The workflow translated a published climatic decision framework into reproducible geospatial code and then evaluated consistency against an established external product.</p>
+      </div>
+
+      <div class="rp-workflow">
+        <article><span>01</span><h3>TerraClimate</h3><p>Monthly temperature and precipitation for the 1991–2020 climate normal.</p></article>
+        <article><span>02</span><h3>Climate normals</h3><p>12 monthly temperature and 12 monthly precipitation climatologies.</p></article>
+        <article><span>03</span><h3>Diagnostics</h3><p>Annual and seasonal variables required by the Köppen-Geiger decision rules.</p></article>
+        <article><span>04</span><h3>Classification</h3><p>Peel et al. thresholds implemented in R using terra.</p></article>
+        <article><span>05</span><h3>Benchmarking</h3><p>Cell-by-cell comparison with Beck et al. (2023) after grid alignment.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section">
+    <div class="container rp-content">
+      <div class="rp-section-heading">
+        <div class="rp-kicker">Results</div>
+        <h2>Strong agreement with an independent published product</h2>
+        <p>
+          The TerraClimate-derived map reproduced the dominant climatic structure of the published reference while retaining expected differences near climatic thresholds and in topographically complex northern regions.
+        </p>
+      </div>
+
+      <div class="rp-results-grid">
+        <figure class="rp-figure-card">
+          <img src="../assets/images/koppen-geiger/koppen-side-by-side.jpg" alt="Side-by-side comparison of the TerraClimate-derived Köppen-Geiger map and Beck et al. 2023">
+          <figcaption><strong>Independent comparison.</strong> TerraClimate-derived classification beside the Beck et al. (2023) 1991–2020 Köppen-Geiger product.</figcaption>
+        </figure>
+
+        <figure class="rp-figure-card">
+          <img src="../assets/images/koppen-geiger/koppen-spatial-disagreement.jpg" alt="Spatial disagreement between the TerraClimate-derived classification and Beck et al. 2023">
+          <figcaption><strong>Spatial disagreement.</strong> Differences are concentrated mainly along climatic transition zones and complex mountain terrain.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section rp-section-last">
+    <div class="container rp-content">
+      <div class="rp-section-heading">
+        <div class="rp-kicker">Interpretation</div>
+        <h2>Agreement, disagreement and what they mean</h2>
+      </div>
+
+      <div class="rp-interpret-grid">
+        <div class="rp-copy">
+          <p>
+            The classification achieved <strong>86.0% area-weighted spatial agreement</strong> across the 30 Köppen-Geiger subclasses and <strong>93.3% agreement</strong> across the five major climate groups when compared with Beck et al. (2023).
+          </p>
+          <p>
+            These values represent spatial agreement between independently derived climate products, not classification accuracy against ground observations. Disagreement was concentrated mainly around major climatic boundaries, including cold-to-polar transitions in the northern mountains and arid-to-temperate transitions farther south.
+          </p>
+          <p>
+            The exercise demonstrates how a published classification framework can be translated into code, independently implemented, quantitatively benchmarked and interpreted with attention to data resolution and threshold sensitivity.
+          </p>
+        </div>
+
+        <aside class="rp-status-card">
+          <span>Spatial comparison</span>
+          <h3>86.0% subclass agreement<br>93.3% major-group agreement</h3>
+          <p>Area-weighted agreement with Beck et al. (2023) after resampling the published 1 km classification to the TerraClimate analysis grid.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <span>© 2026 Waqas Ahmad</span>
+    <span>Agricultural Engineering · Crop Modeling · Earth Observation</span>
+  </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

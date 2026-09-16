@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Multi-Sensor Flood Mapping and Land-Cover Exposure Assessment — project by Waqas Ahmad.">
+<title>Multi-Sensor Flood Mapping and Land-Cover Exposure Assessment | Waqas Ahmad</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../project-template.css">
+</head>
+<body class="research-project">
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="../index.html">WAQAS AHMAD</a>
+    <button class="menu-btn" aria-label="Toggle navigation">☰</button>
+    <nav class="nav">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#outputs">Outputs</a>
+      <a href="../assets/Waqas_Ahmad_CV.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="rp-hero">
+    <div class="container rp-hero-shell">
+      <div class="rp-hero-grid">
+        <div class="rp-hero-visual">
+          <img src="../assets/images/flood-mapping/flood-hero-image.jpg" alt="Sentinel-2 flood progression map for Dera Ghazi Khan during the 2022 Pakistan floods">
+        </div>
+
+        <div class="rp-hero-copy">
+          <div class="rp-kicker">Applied Earth Observation · Flood Hazard Mapping</div>
+          <h1>Multi-Sensor Flood Mapping and Land-Cover Exposure Assessment</h1>
+          <p class="rp-deck">
+            Combining Sentinel-1 SAR and Sentinel-2 optical observations to reconstruct a rapidly evolving 2022 flood event in Dera Ghazi Khan and estimate agricultural land exposed to mapped inundation.
+          </p>
+
+          <div class="rp-tags" aria-label="Project keywords">
+            <span>Sentinel-1</span>
+            <span>Sentinel-2</span>
+            <span>Google Earth Engine</span>
+            <span>Flood Mapping</span>
+            <span>ESA WorldCover</span>
+            <span>R</span>
+            <span>QGIS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rp-meta-strip" aria-label="Project metadata">
+        <div class="rp-meta-item"><span>Study area</span><strong>Dera Ghazi Khan District</strong></div>
+        <div class="rp-meta-item"><span>Event</span><strong>2022 monsoon floods</strong></div>
+        <div class="rp-meta-item"><span>Primary data</span><strong>Sentinel-1 · Sentinel-2</strong></div>
+        <div class="rp-meta-item"><span>Output</span><strong>Conference presentation · 2024</strong></div>
+      </div>
+
+      <a class="rp-back" href="../index.html#projects">← Back to Projects</a>
+    </div>
+  </section>
+
+  <section class="rp-section">
+    <div class="container rp-content">
+      <div class="rp-section-heading">
+        <div class="rp-kicker">Context</div>
+        <h2>Challenge</h2>
+      </div>
+
+      <div class="rp-context-grid">
+        <div class="rp-copy">
+          <p>
+            During the 2022 Pakistan floods, I was asked at the University of Agriculture Faisalabad to produce a rapid estimate of flood-affected areas in Dera Ghazi Khan under a short operational timeframe. The event combined hill-torrent flooding from the Sulaiman Range with later riverine flooding along the Indus, while persistent monsoon cloud cover and satellite acquisition timing made peak inundation difficult to observe directly.
+          </p>
+          <p>
+            I later revisited the original workflow to make it more defensible: Sentinel-1 relative orbits were handled separately, pre-event baselines were refined, and radar and optical detections were treated as complementary observations rather than being forced to agree.
+          </p>
+
+          <div class="rp-question">
+            <span>Research focus</span>
+            <p>How can multi-sensor Earth observation be used to characterize a short-lived flood event when no single satellite acquisition captures the full inundation pattern?</p>
+          </div>
+        </div>
+
+        <figure class="rp-side-figure">
+          <img src="../assets/images/flood-mapping/flood-study-area.jpg" alt="Study area map of Dera Ghazi Khan District showing the Indus River and major geographic references">
+          <figcaption>Dera Ghazi Khan District and key geographic references used in the flood analysis.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section rp-section-soft">
+    <div class="container rp-content">
+      <div class="rp-section-heading">
+        <div class="rp-kicker">Approach</div>
+        <h2>Multi-sensor flood detection and exposure mapping</h2>
+        <p>
+          The workflow retained the different strengths of radar and optical observations, then combined the mapped flood detections for land-cover exposure analysis.
+        </p>
+      </div>
+
+      <div class="rp-workflow">
+        <article><span>01</span><h3>Sentinel-1 SAR</h3><p>Orbit-specific VH observations with late-May / early-June pre-event baselines.</p></article>
+        <article><span>02</span><h3>Change detection</h3><p>Before/after backscatter ratios with permanent-water, terrain and connectivity filtering.</p></article>
+        <article><span>03</span><h3>Sentinel-2</h3><p>Cloud-masked optical observations with MNDWI-based surface-water detection.</p></article>
+        <article><span>04</span><h3>Temporal comparison</h3><p>Multi-date observations retained to show when and where inundation was observed.</p></article>
+        <article><span>05</span><h3>Exposure</h3><p>Combined flood detections intersected with ESA WorldCover land-cover classes.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section">
+    <div class="container rp-content">
+      <div class="rp-section-heading">
+        <div class="rp-kicker">Results</div>
+        <h2>Flood progression and agricultural exposure</h2>
+        <p>
+          Sentinel-1 and Sentinel-2 captured different components of a rapidly evolving event. The disagreement between them was treated as information about acquisition timing, cloud availability, vegetation and surface response rather than simply as error.
+        </p>
+      </div>
+
+      
+        <div class="flood-results-top">
+  	 <figure class="rp-figure-card">
+    	   <img src="../assets/images/flood-mapping/flood-sentinel1-progression.jpg"
+           alt="Sentinel-1 temporal flood progression in Dera Ghazi Khan District">
+	  <figcaption>
+      	   <strong>Radar-observed progression.</strong>
+      	   Sentinel-1 detections across successive acquisition periods, with permanent water retained separately.
+    	  </figcaption>
+  	 </figure>
+
+  	 <figure class="rp-figure-card">
+    	   <img src="../assets/images/flood-mapping/flood-sentinel2-progression.jpg"
+           alt="Sentinel-2 temporal flood progression in Dera Ghazi Khan District">
+	  <figcaption>
+           <strong>Optical-observed progression.</strong>
+           Sentinel-2 flood detections from the available cloud-free observations during the event.
+    	  </figcaption>
+  	 </figure>
+	</div>
+
+	 <figure class="rp-figure-card flood-results-main">
+  	   <img src="../assets/images/flood-mapping/flood-impact.jpg"
+           alt="Estimated combined flood extent and affected cropland in Dera Ghazi Khan District">
+
+  	  <figcaption>
+    	    <strong>Mapped exposure.</strong>
+            Combined satellite-observed flood footprint and the cropland intersected by mapped inundation.
+          </figcaption>
+         </figure>
+      </div>
+    
+  </section>
+
+  <section class="rp-section rp-section-last">
+    <div class="container rp-content">
+      <div class="rp-section-heading">
+        <div class="rp-kicker">Interpretation &amp; limitations</div>
+        <h2>What the analysis supports</h2>
+      </div>
+
+      <div class="rp-interpret-grid">
+        <div class="rp-copy">
+          <p>
+            The cumulative S1/S2 footprint represented approximately <strong>1,402.6 km²</strong> of satellite-observed inundation, of which about <strong>988.3 km²</strong> overlapped cropland. This is best interpreted as an exposure estimate rather than a direct measure of physical or economic damage.
+          </p>
+          <p>
+            Short-duration hill torrents may have passed between acquisitions, cloud cover restricted the optical record, and no independent field-based flood boundary was available for formal validation. The final map therefore represents observed inundation over the available satellite record rather than a reconstruction of the absolute maximum flood extent.
+          </p>
+        </div>
+
+        <aside class="rp-status-card">
+          <span>Research output</span>
+          <h3>Mapping Flood Extent and Damage Assessment using Google Earth Engine</h3>
+          <p>Presented at the International Conference on Geo-Informatics for Water and Agricultural Resource Management, UAF, 2024.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <span>© 2026 Waqas Ahmad</span>
+    <span>Agricultural Engineering · Crop Modeling · Earth Observation</span>
+  </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

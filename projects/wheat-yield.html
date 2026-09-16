@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Satellite Data Assimilation for Wheat Yield Estimation — project by Waqas Ahmad.">
+<title>Satellite Data Assimilation for Wheat Yield Estimation | Waqas Ahmad</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../project-template.css">
+</head>
+<body class="research-project">
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="../index.html">WAQAS AHMAD</a>
+    <button class="menu-btn" aria-label="Toggle navigation">☰</button>
+    <nav class="nav">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#outputs">Outputs</a>
+      <a href="../assets/Waqas_Ahmad_CV.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- =====================================================
+       MASTER RESEARCH-PROJECT HERO
+       ===================================================== -->
+  <section class="rp-hero">
+    <div class="container rp-hero-shell">
+
+      <div class="rp-hero-grid">
+        <div class="rp-hero-visual">
+          <img
+            src="../assets/images/wheat-yield/wheat-hero-image.jpg"
+            alt="Wheat research figure showing satellite-derived LAI, evapotranspiration, phenology and CropSyst yield-model outputs">
+        </div>
+
+        <div class="rp-hero-copy">
+          <div class="rp-kicker">MSc Research · Agricultural Remote Sensing &amp; Crop Modeling</div>
+          <h1>Satellite Data Assimilation for Wheat Yield Estimation</h1>
+          <p class="rp-deck">
+            Integrating satellite-derived crop state and water-use observations with a process-based crop model for wheat biomass and yield estimation in data-limited environments.
+          </p>
+
+          <div class="rp-tags" aria-label="Project keywords">
+            <span>CropSyst</span>
+            <span>EEFlux / METRIC</span>
+            <span>Landsat</span>
+            <span>R</span>
+            <span>Google Earth Engine</span>
+            <span>LAI</span>
+            <span>ETa</span>
+            <span>Phenology</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rp-meta-strip" aria-label="Project metadata">
+        <div class="rp-meta-item">
+          <span>Affiliation</span>
+          <strong>MSc Research · UAF</strong>
+        </div>
+        <div class="rp-meta-item">
+          <span>Status</span>
+          <strong>Manuscript in preparation</strong>
+        </div>
+        <div class="rp-meta-item">
+          <span>Model</span>
+          <strong>CropSyst</strong>
+        </div>
+        <div class="rp-meta-item">
+          <span>EO inputs</span>
+          <strong>Landsat · EEFlux</strong>
+        </div>
+      </div>
+
+
+      <a class="rp-back" href="../index.html#projects">← Back to Projects</a>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       CONTEXT / RESEARCH QUESTION
+       ===================================================== -->
+  <section class="rp-section">
+    <div class="container rp-content">
+      <div class="rp-section-heading">
+        <div class="rp-kicker">Context</div>
+        <h2>Research question</h2>
+      </div>
+
+      <div class="rp-context-grid">
+        <div class="rp-copy">
+          <p>
+            Crop-yield estimation becomes particularly difficult in data-scarce environments where field observations, management records, and even basic phenological information such as sowing and harvest dates may be limited or unavailable. Building on the METRIC–CropSyst framework proposed by Khan et al. (2019), my MSc research evaluated its applicability for wheat production in Pakistan under contrasting rainfed and irrigated conditions. The work focused on adapting key model parameters to local conditions and deriving seasonal phenology dynamically from Landsat NDVI time series so that the framework could operate with minimal field information.
+          </p>
+          <div class="rp-question">
+            <span>Research focus</span>
+            <p>To what extent can routinely available satellite observations of crop state and water use support process-based wheat yield estimation in data-scarce agricultural environments?</p>
+          </div>
+        </div>
+
+        <figure class="rp-side-figure">
+          <img src="../assets/images/wheat-yield/wheat-study-area.jpg" alt="Study area and research context for the wheat CropSyst data-assimilation study">
+          <figcaption>Study context for the rainfed and irrigated wheat sites used in the research.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       APPROACH
+       ===================================================== -->
+  <section class="rp-section rp-section-soft">
+    <div class="container rp-content">
+      <div class="rp-section-heading">
+        <div class="rp-kicker">Approach</div>
+        <h2>From satellite observations to crop-model constraints</h2>
+        <p>
+          The workflow linked remotely sensed canopy state, evapotranspiration and phenology with crop-growth and water-use algorithms derived from CropSyst. Landsat NDVI observations were interpolated to a daily time step using cubic splines, used to estimate leaf area index (LAI), and analysed to derive start, peak and end of season (SOS, POS and EOS). EEFlux evapotranspiration fraction (ETrF) was similarly interpolated and combined with daily reference evapotranspiration to estimate actual evapotranspiration (ETa). LAI was then used to partition ETa into soil evaporation and crop transpiration, following the METRIC–CropSyst approach. Crop transpiration was converted to above-ground biomass using a transpiration-use-efficiency formulation and grain yield was later estimated from biomass using a curvilinear harvest-index relationship.
+        </p>
+      </div>
+
+      <div class="rp-workflow">
+        <article>
+          <span>01</span>
+          <h3>Landsat &amp; EEFlux</h3>
+          <p>Vegetation dynamics and satellite evapotranspiration products.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>NDVI → LAI</h3>
+          <p>Satellite-based estimation of canopy development through the season.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>ETrF → ETa</h3>
+          <p>EEFlux ETrF combined with daily reference evapotranspiration.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Phenology</h3>
+          <p>Seasonal timing derived from NDVI trajectories, including SOS, POS and EOS.</p>
+        </article>
+        <article>
+          <span>05</span>
+          <h3>CropSyst</h3>
+          <p>CropSyst-derived transpiration-use-efficiency algorithms for biomass production, followed by harvest-index-based grain yield estimation.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       RESULTS
+       ===================================================== -->
+  <section class="rp-section">
+    <div class="container rp-content">
+      <div class="rp-section-heading">
+        <div class="rp-kicker">Results</div>
+        <h2>Selected research outputs</h2>
+        <p>
+          Satellite-derived NDVI timeseries captured the seasonal development of wheat at both rainfed and irrigated sites and were used to identify start, peak and end of season (SOS, POS and EOS) across the four growing seasons. Yield estimates from the METRIC–CropSyst framework showed stronger agreement with observations at the irrigated site than at the rainfed site. At the rainfed site, RMSE, MAE and MAPE were 394.10 kg ha⁻¹, 262.08 kg ha⁻¹ and 13.20%, respectively. At the irrigated site, the corresponding errors were 125.47 kg ha⁻¹, 114.52 kg ha⁻¹ and 4.07%. 
+        </p>
+      </div>
+
+      <div class="rp-results-grid">
+        <figure class="rp-figure-card">
+          <img src="../assets/images/wheat-yield/wheat-ndvi-phenology.jpg" alt="Time-series figure comparing NDVI timeseries and wheat phenology">
+          <figcaption>
+            <strong>Crop development and phenology.</strong>
+            Daily satellite-derived NDVI timeseries and phenological metrics (SOS, POS and EOS)results across the wheat growing seasons.
+          </figcaption>
+        </figure>
+
+        <figure class="rp-figure-card">
+          <img src="../assets/images/wheat-yield/wheat-yield-results.jpg" alt="Observed versus simulated wheat yield results from the CropSyst satellite-data-assimilation study">
+          <figcaption>
+            <strong>Model evaluation.</strong>
+            Observed and simulated wheat grain yield at the rainfed and irrigated study sites.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       INTERPRETATION / STATUS
+       ===================================================== -->
+  <section class="rp-section rp-section-last">
+    <div class="container rp-content">
+      <div class="rp-section-heading">
+        <div class="rp-kicker">Interpretation &amp; status</div>
+        <h2>Interpretation, contribution and status</h2>
+      </div>
+
+      <div class="rp-interpret-grid">
+        <div class="rp-copy">
+          <p>
+            The framework performed more consistently at the irrigated site than at the rainfed site. The larger errors under rainfed conditions may partly reflect the relatively small field sizes compared with the native spatial resolution of the Landsat thermal observations used by METRIC. At approximately 100 m native resolution for Landsat 8 thermal data, individual pixels may include signals from adjacent fields with different crops or management conditions, which can influence satellite-derived evapotranspiration estimates.
+          <p>
+	    The main contribution of this work was the application and adaptation of the METRIC–CropSyst framework to a data-scarce agricultural setting in Pakistan. Model parameters were adjusted for local wheat conditions, while a dynamic phenology workflow was introduced to derive SOS, POS and EOS directly from Landsat NDVI time series. This reduced reliance on field-recorded sowing, peak-growth and harvest information, which is often unavailable or inconsistent in the study environment.
+          </p>
+	  <p>
+   
+          </p>
+        </div>
+
+        <aside class="rp-status-card">
+          <span>Working manuscript</span>
+          <h5>The work was completed as part of my MSc (Hons) Agricultural Engineering research at the University of Agriculture Faisalabad and is currently being developed into a manuscript.</h5>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+<section class="rp-section">
+  <div class="container rp-content">
+
+    <div class="rp-section-heading">
+      <div class="rp-kicker">References</div>
+      <h2>Selected references</h2>
+    </div>
+
+    <ol class="rp-reference-list">
+
+      <li>
+        Khan, A., Stöckle, C.O., Nelson, R.L., Peters, T., Adam, J.C.,
+        Lamb, B., Chi, J. and Waldo, S. (2019).
+        <em>Estimating Biomass and Yield Using METRIC Evapotranspiration
+        and Simple Growth Algorithms.</em>
+        Agronomy Journal, 111, 536–544.
+        <a href="https://doi.org/10.2134/agronj2018.04.0248"
+           target="_blank" rel="noreferrer">
+          DOI
+        </a>
+      </li>
+
+      <li>
+        Stöckle, C.O., Kemanian, A.R. and Kremer, C. (2008).
+        <em>On the Use of Radiation- and Water-Use Efficiency for Biomass
+        Production Models.</em>
+        In <em>Response of Crops to Limited Water</em>.
+        <a href="https://doi.org/10.2134/advagricsystmodel1.c2"
+           target="_blank" rel="noreferrer">
+          DOI
+        </a>
+      </li>
+
+      <li>
+        Kemanian, A.R., Stöckle, C.O., Huggins, D.R. and Viega, L.M. (2007).
+        <em>A simple method to estimate harvest index in grain crops.</em>
+        Field Crops Research, 103(3), 208–216.
+        <a href="https://doi.org/10.1016/j.fcr.2007.06.007"
+           target="_blank" rel="noreferrer">
+          DOI
+        </a>
+      </li>
+
+      <!-- Add your exact phenology-method citation here -->
+      <!--
+      <li>
+        Author(s). (Year).
+        <em>Title of phenology paper.</em>
+        Journal, volume, pages.
+        <a href="DOI-OR-PAPER-LINK"
+           target="_blank" rel="noreferrer">
+          DOI
+        </a>
+      </li>
+      -->
+
+    </ol>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <span>© 2026 Waqas Ahmad</span>
+    <span>Agricultural Engineering · Crop Modeling · Earth Observation</span>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

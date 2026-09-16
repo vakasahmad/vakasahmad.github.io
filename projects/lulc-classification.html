@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Multi-temporal land-cover classification of Faisalabad District using Landsat and Random Forest — project by Waqas Ahmad.">
+<title>Multi-temporal Land Cover Classification of Faisalabad | Waqas Ahmad</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../project-template.css">
+</head>
+<body class="research-project">
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="../index.html">WAQAS AHMAD</a>
+    <button class="menu-btn" aria-label="Toggle navigation">☰</button>
+    <nav class="nav">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#outputs">Outputs</a>
+      <a href="../assets/Waqas_Ahmad_CV.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="rp-hero">
+    <div class="container rp-hero-shell">
+      <div class="rp-hero-grid">
+        <div class="rp-hero-visual">
+          <img src="../assets/images/lulc/lulc-hero-image.jpg" alt="Land-cover classification maps of Faisalabad District for 2010 and 2020">
+        </div>
+
+        <div class="rp-hero-copy">
+          <div class="rp-kicker">Applied Earth Observation · Machine Learning</div>
+          <h1>Multi-temporal Land Cover Classification of Faisalabad</h1>
+          <p class="rp-deck">
+            A Random Forest workflow using Landsat imagery to classify broad land-cover patterns in 2010 and 2020, with emphasis on reference-data quality, temporal feature engineering and error diagnosis.
+          </p>
+
+          <div class="rp-tags" aria-label="Project keywords">
+            <span>Landsat 5</span>
+            <span>Landsat 8</span>
+            <span>Random Forest</span>
+            <span>Google Earth Engine</span>
+            <span>NDVI</span>
+            <span>MNDWI</span>
+            <span>BSI</span>
+            <span>QGIS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rp-meta-strip" aria-label="Project metadata">
+        <div class="rp-meta-item"><span>Study area</span><strong>Faisalabad District</strong></div>
+        <div class="rp-meta-item"><span>Years</span><strong>2010 · 2020</strong></div>
+        <div class="rp-meta-item"><span>Model</span><strong>Random Forest · 300 trees</strong></div>
+        <div class="rp-meta-item"><span>Predictors</span><strong>19 spectral, thermal &amp; temporal features</strong></div>
+      </div>
+
+      <a class="rp-back" href="../index.html#projects">← Back to Projects</a>
+    </div>
+  </section>
+
+  <section class="rp-section">
+    <div class="container rp-content">
+      <div class="rp-section-heading">
+        <div class="rp-kicker">Context</div>
+        <h2>Objective and reference-data challenge</h2>
+      </div>
+
+      <div class="rp-copy">
+        <p>
+          This project explored a consistent supervised classification workflow across two Landsat eras under limited historical reference information. Five broad classes were mapped: <strong>Tree Cover, Cropland, Built-up, Bare Surface and Water</strong>.
+        </p>
+        <p>
+          Reference polygons were interpreted independently for each year. The 2020 samples could be checked against historical high-resolution imagery and Landsat time series, while the 2010 samples relied more strongly on Landsat composites, spectral indices, seasonal behaviour and historical imagery where available.
+        </p>
+
+        <div class="rp-question">
+          <span>Research focus</span>
+          <p>How can a supervised Landsat classification be made more defensible when historical reference information is limited and spectral confusion is concentrated in mixed or dynamic land-cover settings?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section rp-section-soft">
+    <div class="container rp-content">
+      <div class="rp-section-heading">
+        <div class="rp-kicker">Approach</div>
+        <h2>Classification, temporal features and error analysis</h2>
+        <p>The workflow combined standard spectral information with seasonal and temporal diagnostics, then used spatial error inspection to identify ambiguous reference samples and mixed pixels.</p>
+      </div>
+
+      <div class="rp-workflow">
+        <article><span>01</span><h3>Preprocessing</h3><p>Collection 2 Level-2 imagery, scaling, cloud/shadow and saturation masking.</p></article>
+        <article><span>02</span><h3>Feature engineering</h3><p>Optical bands, temperature, NDVI, MNDWI, NDBI, BSI and seasonal metrics.</p></article>
+        <article><span>03</span><h3>Reference data</h3><p>Year-specific polygons placed within visually homogeneous land-cover patches.</p></article>
+        <article><span>04</span><h3>Random Forest</h3><p>300-tree model with class-stratified polygon-level training and validation split.</p></article>
+        <article><span>05</span><h3>Error diagnosis</h3><p>Confusion patterns examined spatially to refine ambiguous samples and temporal features.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section">
+    <div class="container rp-content">
+      <div class="rp-section-heading">
+        <div class="rp-kicker">Results</div>
+        <h2>2010 and 2020 land-cover classification</h2>
+        <p>
+          Cropland remained the dominant mapped class in both years, while the classified built-up footprint was larger in 2020. Cross-year differences in bare surface, water and tree cover are interpreted more cautiously because reference quality, river conditions and mixed pixels affect direct comparability.
+        </p>
+      </div>
+
+      <div class="rp-results-grid">
+        <figure class="rp-figure-card lulc-results-main">
+          <img src="../assets/images/lulc/lulc-2010-2020.jpg" alt="Random Forest land-cover classification of Faisalabad District for 2010 and 2020">
+          <figcaption><strong>Mapped land cover.</strong> Random Forest classification of Faisalabad District for 2010 and 2020 using a common five-class legend.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section rp-section-last">
+    <div class="container rp-content">
+      <div class="rp-section-heading">
+        <div class="rp-kicker">Interpretation &amp; limitations</div>
+        <h2>What improved the model</h2>
+      </div>
+
+      <div class="rp-interpret-grid">
+        <div class="rp-copy">
+          <p>
+            Error analysis showed that exposed riverine surfaces could be confused with built-up land in the 2010 imagery. Adding temporal MNDWI and BSI statistics, together with targeted samples for moist exposed surfaces, reduced this error along the Ravi corridor.
+          </p>
+          <p>
+            A separate audit of the 2020 Tree Cover predictions revealed mixed 30 m pixels where cropland contained field-boundary trees, roadside vegetation or canal trees. Adding representative cropland samples from these mixed settings reduced over-prediction of Tree Cover.
+          </p>
+          <p>
+            Historical reference information was substantially weaker for 2010 than for 2020, and the validation is an internal polygon-level holdout rather than independent ground validation. The 2010–2020 comparison is therefore treated as exploratory rather than as a precise change-detection product.
+          </p>
+        </div>
+
+        <aside class="rp-status-card">
+          <span>Research takeaway</span>
+          <h3>Model improvement came from diagnosing where and why errors occurred, not simply from increasing classifier complexity.</h3>
+          <p>Temporal wetness/soil features and targeted hard-negative reference samples were more useful than treating all confusion as random model error.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <span>© 2026 Waqas Ahmad</span>
+    <span>Agricultural Engineering · Crop Modeling · Earth Observation</span>
+  </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>
