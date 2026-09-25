@@ -61,7 +61,7 @@ p{margin-top:0}
 .button:hover{transform:translateY(-1px)}
 .button.primary{background:var(--text);color:#fff}
 .portrait{
-  padding:16px;background:var(--surface);border:1px solid var(--line);
+  padding:10px;background:var(--surface);border:1px solid var(--line);
   border-radius:50%;box-shadow:var(--shadow)
 }
 .portrait img{
